@@ -1,18 +1,22 @@
-const hostnames = [
-  'raw.githubusercontent.com',
-  'res.cloudinary.com']
-
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   optimizeFonts: true,
+  compiler: {
+    removeConsole: true,
+  },
   images: {
-    remotePatterns: hostnames.map(hostname => ({
-      protocol: 'https',
-      hostname
-  })),
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com'
+      },
+    ],
     minimumCacheTTL:1500000,
   }
 }

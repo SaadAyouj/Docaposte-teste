@@ -11,6 +11,7 @@ import {
 import { BsArrowUpRight, BsHeartFill, BsHeart } from 'react-icons/bs';
 import { Movie, TvShow } from "../../data/index";
 
+
 interface Props {
   data: Movie | TvShow;
 }
@@ -39,6 +40,10 @@ export default function MovieCard({ data }: Props ) {
             h="full"
             w="full"
             alt={'Blog Image'}
+            onError={({ currentTarget }) => {
+              currentTarget.onerror = null; // prevents looping
+              currentTarget.src="https://static6.depositphotos.com/1002881/567/i/450/depositphotos_5677451-stock-photo-error-404.jpg";
+            }}
           />
         </Box>
         <Box p={4}>
