@@ -2,7 +2,7 @@ import { Text, Container, SimpleGrid, Box } from "@chakra-ui/react";
 import { useQuery } from "react-query";
 
 import Filter from "../components/filter/Filter";
-import MovieCard from "../components/movieCard/MovieCard";
+import MovieCard from "./movie";
 import { Movie, TvShow } from "../data/index";
 
 

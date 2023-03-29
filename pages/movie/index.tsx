@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { BsArrowUpRight, BsHeartFill, BsHeart } from 'react-icons/bs';
 import { Movie, TvShow } from "../../data/index";
+import Link from 'next/link'
 
 
 interface Props {
@@ -74,7 +75,8 @@ export default function MovieCard({ data }: Props ) {
             cursor={'pointer'}
             w="full">
             <Text fontSize={'md'} fontWeight={'semibold'}>
-              View more
+              
+             <Link href={'/movie/' + data.id}>View more</Link>
             </Text>
             <BsArrowUpRight />
           </Flex>
