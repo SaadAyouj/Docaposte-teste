@@ -17,7 +17,7 @@ interface Props {
   data: Movie | TvShow;
 }
 
-export default function MovieCard({ data }: Props ) {
+export default function MovieCard({ data }: Props) {
 
   return (
     <Center py={6}>
@@ -43,7 +43,7 @@ export default function MovieCard({ data }: Props ) {
             alt={'Blog Image'}
             onError={({ currentTarget }) => {
               currentTarget.onerror = null; // prevents looping
-              currentTarget.src="https://static6.depositphotos.com/1002881/567/i/450/depositphotos_5677451-stock-photo-error-404.jpg";
+              currentTarget.src = "https://static6.depositphotos.com/1002881/567/i/450/depositphotos_5677451-stock-photo-error-404.jpg";
             }}
           />
         </Box>
@@ -67,6 +67,7 @@ export default function MovieCard({ data }: Props ) {
           </Text>
         </Box>
         <HStack borderTop={'1px'} color="black">
+
           <Flex
             p={4}
             alignItems="center"
@@ -75,11 +76,11 @@ export default function MovieCard({ data }: Props ) {
             cursor={'pointer'}
             w="full">
             <Text fontSize={'md'} fontWeight={'semibold'}>
-              
-             <Link href={'/movie/' + data.id}>View more</Link>
+            <Link href={'/movie/' + data.id}>View more</Link>
             </Text>
             <BsArrowUpRight />
           </Flex>
+
         </HStack>
       </Box>
     </Center>
